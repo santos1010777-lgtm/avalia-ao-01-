@@ -1,0 +1,87 @@
+
+cauculadoura 
+
+
+import java.util.Scanner;
+
+public class Calculadora {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double num1, num2;
+        char operacao;
+
+        System.out.println("=== Calculadora Simples ===");
+        System.out.print("Digite o primeiro número: ");
+        num1 = scanner.nextDouble();
+
+        System.out.print("Digite o segundo número: ");
+        num2 = scanner.nextDouble();
+
+        System.out.print("Escolha a operação (+, -, *, /): ");
+        operacao = scanner.next().charAt(0);
+
+        double resultado;
+
+        switch (operacao) {
+            case '+':
+                resultado = num1 + num2;
+                break;
+            case '-':
+                resultado = num1 - num2;
+                break;
+            case '*':
+                resultado = num1 * num2;
+                break;
+            case '/':
+                if (num2 != 0) {
+                    resultado = num1 / num2;
+                } else {
+                    System.out.println("Erro: Divisão por zero não é permitida.");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Operação inválida!");
+                return;
+        }
+
+        System.out.println("Resultado: " + resultado);
+        scanner.close();
+    }
+}
+
+
+termometro 
+import java.util.Scanner;
+
+public class Termometro {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== Termômetro Simples ===");
+        System.out.print("Digite a temperatura em Celsius: ");
+        double celsius = scanner.nextDouble();
+
+        // Conversão para Fahrenheit e Kelvin
+        double fahrenheit = (celsius * 9/5) + 32;
+        double kelvin = celsius + 273.15;
+
+        System.out.println("Temperatura em Celsius: " + celsius + " °C");
+        System.out.println("Temperatura em Fahrenheit: " + fahrenheit + " °F");
+        System.out.println("Temperatura em Kelvin: " + kelvin + " K");
+
+        // Classificação simples
+        if (celsius < 15) {
+            System.out.println("Status: Frio ❄️");
+        } else if (celsius >= 15 && celsius <= 25) {
+            System.out.println("Status: Agradável 🌤️");
+        } else {
+            System.out.println("Status: Quente ☀️");
+        }
+
+        scanner.close();
+    }
+}
+
+
+
